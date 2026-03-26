@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar4 Partnership Offerings & Rates</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f7f6f2;
+  --color-background-tertiary: #f1efe8;
+  --color-background-success: #e1f5ee;
+  --color-text-primary: #1a1a18;
+  --color-text-secondary: #5f5e5a;
+  --color-text-tertiary: #888780;
+  --color-text-success: #085041;
+  --color-text-info: #185fa5;
+  --color-border-tertiary: rgba(0,0,0,0.10);
+  --color-border-secondary: rgba(0,0,0,0.18);
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: #1e1e1c;
+    --color-background-secondary: #2a2a27;
+    --color-background-tertiary: #242422;
+    --color-background-success: #04342c;
+    --color-text-primary: #e8e6de;
+    --color-text-secondary: #9c9a92;
+    --color-text-tertiary: #6a6862;
+    --color-text-success: #9fe1cb;
+    --color-text-info: #85b7eb;
+    --color-border-tertiary: rgba(255,255,255,0.10);
+    --color-border-secondary: rgba(255,255,255,0.18);
+  }
+}
+body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--color-background-tertiary); color: var(--color-text-primary); padding: 32px 24px; min-height: 100vh; }
+.page-header { margin-bottom: 24px; }
+.page-header h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.page-header p { font-size: 13px; color: var(--color-text-secondary); }
+.tab-bar { display: flex; border-bottom: 1px solid var(--color-border-secondary); margin-bottom: 28px; }
+.tab-btn { font-family: inherit; font-size: 13px; font-weight: 500; padding: 10px 20px; border: none; border-bottom: 2px solid transparent; background: transparent; color: var(--color-text-secondary); cursor: pointer; margin-bottom: -1px; transition: color .15s; }
+.tab-btn:hover { color: var(--color-text-primary); }
+.tab-btn.active { color: var(--color-text-primary); border-bottom-color: var(--color-text-primary); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.section-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+.site-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 99px; border: 0.5px solid var(--color-border-secondary); cursor: pointer; user-select: none; background: var(--color-background-primary); color: var(--color-text-secondary); transition: all .15s; }
+.chip:hover { color: var(--color-text-primary); }
+.chip.active { background: var(--color-text-primary); color: var(--color-background-primary); border-color: var(--color-text-primary); }
+.chip-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+button { font-family: inherit; font-size: 12px; padding: 7px 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-primary); cursor: pointer; white-space: nowrap; transition: background .15s; }
+button:hover { background: var(--color-background-secondary); }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+.rc-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rc-table th { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .05em; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--color-border-secondary); background: var(--color-background-secondary); }
+.rc-table th.right { text-align: right; }
+.rc-table td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: middle; color: var(--color-text-primary); }
+.rc-table tr:last-child td { border-bottom: none; }
+.rc-table tr:hover td { background: var(--color-background-secondary); }
+.rc-table tr.hidden-row { display: none; }
+.del-name { font-weight: 500; font-size: 13px; }
+.del-desc { font-size: 11px; color: var(--color-text-secondary); margin-top: 3px; line-height: 1.5; }
+.sub-note { font-size: 10px; color: var(--color-text-tertiary); margin-top: 2px; }
+.price-cell { text-align: right; font-weight: 500; white-space: nowrap; font-size: 13px; }
+.divider-col { border-left: 0.5px solid var(--color-border-tertiary); }
+.cadence-pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
+.pill-once    { background: #E1F5EE; color: #085041; }
+.pill-monthly { background: #EEEDFE; color: #3C3489; }
+@media (prefers-color-scheme: dark) {
+  .pill-once    { background: #04342C; color: #9FE1CB; }
+  .pill-monthly { background: #26215C; color: #CECBF6; }
+}
+.check-col { width: 36px; text-align: center; }
+.check-col input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: var(--color-text-info); }
+.qty-input { width: 50px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: var(--color-background-primary); color: var(--color-text-primary); font-size: 13px; padding: 4px 6px; font-family: inherit; }
+.qty-input:disabled { opacity: 0.3; cursor: not-allowed; }
+.no-rows { text-align: center; padding: 28px; font-size: 13px; color: var(--color-text-secondary); display: none; }
+.summary-block { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 16px; margin-top: 16px; display: none; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1px 1fr 1px auto; align-items: stretch; }
+.summary-col { padding: 0 18px; }
+.summary-col:first-child { padding-left: 4px; }
+.summary-divider { background: var(--color-border-secondary); margin: 0 2px; }
+.disc-label { font-size: 11px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+.disc-val { font-size: 17px; font-weight: 500; }
+.disc-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 3px; }
+.disc-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 99px; background: var(--color-background-success); color: var(--color-text-success); margin-bottom: 4px; }
+.total-line { color: var(--color-text-success); }
+.summary-actions { display: flex; align-items: center; padding-left: 18px; }
+.note { font-size: 11px; color: var(--color-text-secondary); margin-top: 10px; line-height: 1.5; }
+
+/* Bundle tab */
+.preset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
+.preset-card { border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+.preset-header { padding: 18px 18px 14px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.preset-header.dark { border-bottom-color: rgba(255,255,255,0.08); }
+.preset-tier-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
+.preset-name { font-size: 16px; font-weight: 500; margin-bottom: 5px; }
+.preset-tagline { font-size: 12px; line-height: 1.5; margin-bottom: 12px; }
+.preset-price { font-size: 20px; font-weight: 500; }
+.preset-price-sub { font-size: 11px; margin-top: 3px; }
+.preset-body { padding: 14px 18px; flex: 1; }
+.preset-item { font-size: 12px; padding: 6px 0; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.preset-item:last-child { border-bottom: none; }
+.preset-item-name { color: var(--color-text-primary); font-weight: 500; font-size: 12px; }
+.preset-item-detail { color: var(--color-text-tertiary); font-size: 11px; white-space: nowrap; }
+.preset-footer { font-size: 11px; color: var(--color-text-tertiary); line-height: 1.5; margin-top: 14px; padding-top: 10px; border-top: 0.5px solid var(--color-border-tertiary); }
+.sublabel-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.15); color: #e8e6de; }
+
+.goal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+.goal-card { border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-lg); padding: 14px; cursor: pointer; user-select: none; transition: all .15s; }
+.goal-card:hover { border-color: var(--color-text-primary); }
+.goal-card.active { border-color: var(--color-text-primary); background: var(--color-background-secondary); }
+.goal-card.active .goal-check { opacity: 1; }
+.goal-check { width: 16px; height: 16px; border-radius: 50%; background: var(--color-text-primary); opacity: 0; transition: opacity .15s; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.goal-check::after { content:''; display:block; width:5px; height:3px; border-left:1.5px solid var(--color-background-primary); border-bottom:1.5px solid var(--color-background-primary); transform:rotate(-45deg) translate(1px,-1px); }
+.goal-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.goal-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+.budget-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
+.budget-input-wrap { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-secondary); }
+.budget-input { width: 120px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: var(--color-background-primary); color: var(--color-text-primary); font-size: 13px; padding: 7px 10px; font-family: inherit; }
+.build-btn { font-size: 13px; padding: 8px 18px; background: var(--color-text-primary); color: var(--color-background-primary); border: 0.5px solid var(--color-text-primary); border-radius: var(--border-radius-md); cursor: pointer; font-family: inherit; }
+.build-btn:hover { opacity: 0.85; }
+.bundle-result { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; margin-top: 8px; display: none; }
+.bundle-result-header { padding: 14px 16px; background: var(--color-background-secondary); border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; justify-content: space-between; align-items: flex-start; }
+.bundle-result-title { font-size: 14px; font-weight: 500; }
+.bundle-result-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 3px; }
+.bundle-price-big { font-size: 19px; font-weight: 500; color: var(--color-text-success); }
+.bundle-price-small { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; text-align: right; }
+.bundle-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.bundle-table td { padding: 9px 16px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.bundle-table tr:last-child td { border-bottom: none; }
+.bundle-table .amt { text-align: right; font-weight: 500; white-space: nowrap; }
+.sep { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 28px 0; }
+
+
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Pillar4 Partnerships: Offerings & Rates</h1>
+  <p>Rate card, bundle builder, media plan, and IO generator</p>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" id="tabbtn-rc" onclick="switchTab('rc',this)">Rate card</button>
+  <button class="tab-btn" id="tabbtn-bb" onclick="switchTab('bb',this)">Bundle builder</button>
+  <button class="tab-btn" id="tabbtn-mp" onclick="switchTab('mp',this)">Media plan</button>
+  <button class="tab-btn" id="tabbtn-io" onclick="switchTab('io',this)">IO generator</button>
+</div>
+
+<!-- ═══ TAB 1: RATE CARD ═══ -->
+<div id="tab-rc" class="tab-panel active">
+  <div class="section-label">Filter by property</div>
+  <div class="site-chips" id="chips"></div>
+  <div class="card">
+    <table class="rc-table">
+      <thead><tr>
+        <th class="check-col"></th>
+        <th style="min-width:130px;width:160px">Deliverable</th>
+        <th style="max-width:260px">Description</th>
+        <th class="right divider-col" style="min-width:90px" id="fee-header">Fee</th>
+        <th class="right" style="min-width:80px">Cadence</th>
+        <th class="right divider-col" style="min-width:56px">Qty</th>
+        <th class="right divider-col" style="min-width:88px">Subtotal</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="no-rows" id="no-rows">No deliverables available for this selection.</div>
+  </div>
+  <div class="summary-block" id="summary-block">
+    <div class="summary-grid">
+      <div class="summary-col"><div class="disc-label">Flat-fee</div><div class="disc-val" id="once-out">—</div><div class="disc-sub" id="once-sub"></div></div>
+      <div class="summary-divider"></div>
+      <div class="summary-col"><div class="disc-label">Monthly recurring</div><div class="disc-val" id="monthly-out">—</div><div class="disc-sub" id="monthly-sub"></div></div>
+      <div class="summary-divider"></div>
+      <div class="summary-col" style="min-width:160px"><div id="disc-badge-wrap"></div><div class="disc-label" style="margin-top:2px">Total (with discount)</div><div class="disc-val total-line" id="total-out">—</div><div class="disc-sub" id="total-sub"></div></div>
+      <div class="summary-actions">
+        <div style="display:flex;flex-direction:column;gap:6px;padding-left:18px">
+          <button onclick="goToMediaPlan('rc')" style="font-size:11px;padding:5px 10px;white-space:nowrap">Build media plan →</button>
+          <button onclick="goToIO('rc')" style="font-size:11px;padding:5px 10px;white-space:nowrap">Generate IO →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="note" id="disc-note"></div>
+  <div id="summary-breakdown" style="display:none;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:16px 18px;margin-top:12px"></div>
+</div>
+
+<!-- ═══ TAB 2: BUNDLE BUILDER ═══ -->
+<div id="tab-bb" class="tab-panel">
+
+  <div class="section-label" style="margin-bottom:4px">Partnership tiers</div>
+  <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:20px;line-height:1.6">Pre-built packages designed for different stages of partnership. All tiers include a commission on qualifying revenue.</p>
+  <div class="preset-grid" id="preset-grid"></div>
+
+  <hr class="sep">
+
+  <div class="section-label" style="margin-bottom:4px">Custom bundle builder</div>
+  <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:20px;line-height:1.6">Select a property, pick goals, and set a budget — we'll recommend the right mix with bundle pricing applied.</p>
+
+  <div class="section-label">Properties <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">(pick all that apply)</span></div>
+  <div class="site-chips" id="bundle-chips"></div>
+
+  <div class="section-label">Goals <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">(pick all that apply)</span></div>
+  <div class="goal-grid" id="goal-grid"></div>
+
+  <div class="section-label">Budget</div>
+  <div class="budget-row">
+    <div class="budget-input-wrap">Monthly<input type="number" class="budget-input" id="budget-monthly" placeholder="e.g. 15000" min="0"></div>
+    <div class="budget-input-wrap">One-time<input type="number" class="budget-input" id="budget-onetime" placeholder="e.g. 10000" min="0"></div>
+    <button class="build-btn" onclick="buildBundle()">Build bundle →</button>
+  </div>
+
+  <div class="bundle-result" id="bundle-result">
+    <div class="bundle-result-header">
+      <div><div class="bundle-result-title" id="bundle-title"></div><div class="bundle-result-sub" id="bundle-sub"></div></div>
+      <div><div class="bundle-price-big" id="bundle-price"></div><div class="bundle-price-small" id="bundle-price-sub"></div></div>
+    </div>
+    <table class="bundle-table" id="bundle-table"></table>
+    <div style="padding:10px 16px;font-size:11px;color:var(--color-text-secondary);border-top:0.5px solid var(--color-border-tertiary)" id="bundle-note"></div>
+    <div style="padding:10px 16px;display:flex;gap:8px;border-top:0.5px solid var(--color-border-tertiary)">
+      <button onclick="goToMediaPlan('bb')" style="font-size:11px;padding:5px 10px">Build media plan →</button>
+      <button onclick="goToIO('bb')" style="font-size:11px;padding:5px 10px">Generate IO →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ TAB 3: MEDIA PLAN ═══ -->
+<div id="tab-mp" class="tab-panel">
+  <div class="section-label" style="margin-bottom:4px">Media plan builder</div>
+  <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:20px;line-height:1.6">Upload or paste your page-level traffic data to generate a media plan with placement recommendations, estimated reach, timing, and budget allocation.</p>
+
+  <div id="mp-source-notice" style="display:none;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--color-text-secondary)"></div>
+
+  <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:16px">
+    <div style="padding:16px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)">
+      <div style="font-size:13px;font-weight:500;margin-bottom:4px">Step 1 — Add your traffic data</div>
+      <div style="font-size:11px;color:var(--color-text-secondary)">Paste from a spreadsheet or upload a CSV. Expected columns: URL, monthly sessions or pageviews, and optionally impressions. Column names are auto-detected.</div>
+    </div>
+    <div style="padding:16px">
+      <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+        <button onclick="document.getElementById('mp-csv-input').click()" style="font-size:12px;padding:6px 12px">Upload CSV</button>
+        <input type="file" id="mp-csv-input" accept=".csv" style="display:none" onchange="handleCSV(this)">
+        <button onclick="togglePaste()" style="font-size:12px;padding:6px 12px" id="paste-btn">Paste data</button>
+        <button onclick="loadSampleData()" style="font-size:12px;padding:6px 12px;color:var(--color-text-tertiary)">Load sample</button>
+      </div>
+      <div id="paste-area" style="display:none">
+        <textarea id="paste-input" placeholder="Paste rows here. First row can be headers. Tab or comma separated.&#10;Example:&#10;URL&#9;Sessions&#9;Impressions&#10;/best-mattresses&#9;45000&#9;120000" style="width:100%;height:140px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:12px;padding:10px;font-family:monospace;resize:vertical"></textarea>
+        <button onclick="parsePaste()" style="margin-top:8px;font-size:12px;padding:6px 14px;background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)">Parse data →</button>
+      </div>
+      <div id="mp-data-preview" style="display:none">
+        <div style="font-size:11px;color:var(--color-text-success);margin-bottom:8px" id="mp-parse-status"></div>
+        <div style="overflow-x:auto;max-height:200px;overflow-y:auto">
+          <table id="mp-preview-table" style="width:100%;border-collapse:collapse;font-size:12px"></table>
+        </div>
+        <button onclick="clearMPData()" style="margin-top:8px;font-size:11px;padding:4px 10px;color:var(--color-text-tertiary)">Clear and re-upload</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mp-config" style="display:none;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:16px">
+    <div style="padding:16px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)">
+      <div style="font-size:13px;font-weight:500;margin-bottom:4px">Step 2 — Configure your plan</div>
+    </div>
+    <div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div class="section-label" style="margin-bottom:6px">Campaign start month</div>
+        <input type="month" id="mp-start-month" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:6px">Campaign duration</div>
+        <select id="mp-duration" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">
+          <option value="1">1 month</option>
+          <option value="2">2 months</option>
+          <option value="3" selected>3 months</option>
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+        </select>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:6px">Total budget (optional)</div>
+        <input type="number" id="mp-budget" placeholder="e.g. 50000" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:6px">Max placements to recommend</div>
+        <select id="mp-max-placements" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">
+          <option value="3">Top 3</option>
+          <option value="5" selected>Top 5</option>
+          <option value="10">Top 10</option>
+          <option value="999">All pages</option>
+        </select>
+      </div>
+    </div>
+    <div style="padding:0 16px 16px">
+      <button onclick="generateMediaPlan()" style="font-size:13px;padding:8px 18px;background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)">Generate media plan →</button>
+    </div>
+  </div>
+
+  <div id="mp-output" style="display:none"></div>
+</div>
+
+<!-- ═══ TAB 4: IO GENERATOR ═══ -->
+<div id="tab-io" class="tab-panel">
+  <div class="section-label" style="margin-bottom:4px">IO generator</div>
+  <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:20px;line-height:1.6">Fill in partner details below. Deliverable and pricing information will be pulled from whichever tab you clicked "Generate IO" from.</p>
+
+  <div id="io-source-notice" style="display:none;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--color-text-secondary)"></div>
+
+  <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden">
+    <div id="io-form-content">
+      <div style="padding:32px;text-align:center;color:var(--color-text-tertiary);font-size:13px">
+        Click "Generate IO →" from the Rate card or Bundle builder tab to pull your deal details here.
+      </div>
+    </div>
+  </div>
+
+  <div id="io-output" style="display:none;margin-top:20px"></div>
+</div>
+
+<script>
+const SITES=[
+  {id:'fortune',label:'Fortune',color:'#854F0B'},
+  {id:'slp',label:'Sleepopolis',color:'#185FA5'},
+  {id:'mc',label:'Mattress Clarity',color:'#0F6E56'},
+  {id:'mn',label:'Mattress Nerd',color:'#534AB7'},
+  {id:'ggr',label:'Garage Gym Reviews',color:'#3B6D11'},
+  {id:'barbend',label:'Barbend',color:'#993C1D'},
+  {id:'ncoa',label:'NCOA',color:'#7F77DD'},
+  {id:'aarp',label:'AARP',color:'#D85A30'},
+];
+
+const DELIVERABLES=[
+  {id:'tiktok',name:'TikTok post',cadence:'once',cadenceLabel:'Flat fee',hasVideo:true,isReview:false,
+    desc:'30–60 sec vertical video published natively on TikTok. Drives discovery via the For You Page.',
+    goals:['brand_awareness','sales_growth'],
+    fees:{fortune:null,slp:500,mc:500,mn:500,ggr:500,barbend:null,ncoa:null,aarp:null}},
+  {id:'ig_story',name:'Instagram story',cadence:'once',cadenceLabel:'Flat fee',hasVideo:true,isReview:false,
+    desc:'30–60 sec short-form vertical content. Best for time-sensitive offers and swipe-up link traffic.',
+    goals:['brand_awareness','sales_growth'],
+    fees:{fortune:null,slp:500,mc:500,mn:500,ggr:500,barbend:null,ncoa:null,aarp:null}},
+  {id:'ig_post',name:'Instagram post',cadence:'once',cadenceLabel:'Flat fee',hasVideo:true,isReview:false,
+    desc:'Permanent feed content with lasting discoverability via hashtags and Explore.',
+    goals:['brand_awareness','sales_growth'],
+    fees:{fortune:null,slp:750,mc:750,mn:750,ggr:750,barbend:null,ncoa:null,aarp:null}},
+  {id:'youtube',name:'YouTube video',cadence:'once',cadenceLabel:'Flat fee',hasVideo:true,isReview:false,
+    desc:'4–7 min dedicated product review on YouTube, cross-posted to social. High purchase intent, SEO-indexed.',
+    goals:['ai_visibility','sales_growth','brand_awareness'],
+    fees:{fortune:null,slp:10000,mc:10000,mn:10000,ggr:10000,barbend:null,ncoa:10000,aarp:10000}},
+  {id:'whitelist',name:'Meta whitelisting',cadence:'monthly',cadenceLabel:'Per month',hasVideo:false,isReview:false,
+    desc:'Partners run paid ads directly from our social handles using approved creative.',
+    goals:['sales_growth','profitable_growth'],
+    fees:{fortune:null,slp:10000,mc:10000,mn:10000,ggr:10000,barbend:3000,ncoa:null,aarp:null}},
+  {id:'featured',name:'Featured placement',cadence:'once',cadenceLabel:'Flat fee',hasVideo:false,isReview:false,
+    desc:'Newsletter and/or website banner placement. High-visibility awareness driver across our full audience.',
+    goals:['brand_awareness','sales_growth'],
+    fees:{fortune:7500,slp:7500,mc:7500,mn:7500,ggr:7500,barbend:5000,ncoa:7500,aarp:7500}},
+  {id:'sem',name:'Paid search co-op',cadence:'monthly',cadenceLabel:'Per month',hasVideo:false,isReview:false,
+    note:'$10k retainer',
+    desc:'Shared investment in keyword bidding on branded or category terms across our properties.',
+    goals:['ai_visibility','sales_growth','profitable_growth'],
+    fees:{fortune:10000,slp:10000,mc:10000,mn:10000,ggr:10000,barbend:10000,ncoa:10000,aarp:10000}},
+  {id:'creative',name:'Creative licensing',cadence:'monthly',cadenceLabel:'Per month',hasVideo:false,isReview:false,
+    desc:'We produce product-focused creative assets partners use in their own paid campaigns.',
+    goals:['brand_awareness','profitable_growth'],
+    fees:{fortune:10000,slp:5000,mc:5000,mn:5000,ggr:10000,barbend:5000,ncoa:5000,aarp:10000}},
+  {id:'review',name:'Long-form review',cadence:'once',cadenceLabel:'Flat fee',hasVideo:false,isReview:true,
+    note:'+ commission',
+    desc:'In-depth written editorial content — single-brand reviews or listicle roundups — with analysis, pros/cons, and a recommendation. A high-value AEO and SEO asset that compounds over time.',
+    goals:['ai_visibility','sales_growth','profitable_growth'],
+    fees:{fortune:7500,slp:5000,mc:5000,mn:5000,ggr:5000,barbend:2500,ncoa:5000,aarp:10000}},
+];
+
+const GOALS=[
+  {id:'ai_visibility',name:'AI visibility',icon:'◎',desc:'Appear in AI-generated search results and recommendation engines via long-form, SEO-rich content.'},
+  {id:'sales_growth',name:'Increased sales & growth',icon:'↑',desc:'Drive measurable revenue through high-intent audiences, affiliate links, and conversion-focused placements.'},
+  {id:'brand_awareness',name:'Brand awareness',icon:'◈',desc:'Reach new audiences and build brand recognition across multiple channels and content formats.'},
+  {id:'profitable_growth',name:'Profitable growth',icon:'◇',desc:'Maximize efficiency with evergreen content, whitelisting, and paid search that delivers sustained ROI.'},
+];
+
+const PRESET_TIERS=[
+  {
+    label:'Tier 1', name:'Starter', dark:false,
+    lightColor:'#EEEDFE', textColor:'#3C3489', sublabel:null,
+    tagline:'A focused one-time package to test our audience and content quality.',
+    pricing:'$10,000', pricingSub:'One-time fee + commission',
+    items:[
+      {name:'Long-form review',     detail:'×1'},
+      {name:'Featured placement',   detail:'×1'},
+    ],
+    footer:'Best for brands exploring a new channel or testing content-driven performance.',
+    goals:['AI visibility','Brand awareness'],
+  },
+  {
+    label:'Tier 2', name:'Growth', dark:false,
+    lightColor:'#E1F5EE', textColor:'#085041', sublabel:null,
+    tagline:'A more comprehensive one-time package built to drive measurable results.',
+    pricing:'$25,000', pricingSub:'One-time fee + commission',
+    items:[
+      {name:'YouTube video',        detail:'×1'},
+      {name:'Long-form review',     detail:'×2'},
+      {name:'Featured placement',   detail:'×2'},
+      {name:'TikTok post',          detail:'×2'},
+    ],
+    footer:'Best for brands ready to invest in high-intent, multi-format content at scale.',
+    goals:['AI visibility','Sales & growth','Brand awareness'],
+  },
+  {
+    label:'Tier 3', name:'Strategic retainer', dark:false,
+    lightColor:'#FAECE7', textColor:'#712B13', sublabel:null,
+    tagline:'Monthly access to our full suite with dedicated support and priority placement.',
+    pricing:'$50,000/mo', pricingSub:'Monthly retainer + commission',
+    items:[
+      {name:'YouTube videos',       detail:'Up to 2/mo'},
+      {name:'Long-form reviews',    detail:'Up to 2/mo'},
+      {name:'Featured placements',  detail:'Priority access'},
+      {name:'Paid search co-op',    detail:'Included'},
+      {name:'Meta whitelisting',    detail:'Included'},
+      {name:'Creative licensing',   detail:'Included'},
+      {name:'Social content',       detail:'Up to 4/mo'},
+    ],
+    footer:'Best for strategic partners who want dedicated channel ownership and first-look opportunities.',
+    goals:['Full funnel','Always-on growth'],
+  },
+  {
+    label:'Tier 3A', name:'Always-on', dark:true,
+    lightColor:'#2C2C2A', textColor:'#9c9a92', sublabel:'Most strategic',
+    tagline:'Our highest-tier partnership — dedicated talent, first-look inventory, and co-marketing access.',
+    pricing:'$75,000/mo', pricingSub:'Monthly retainer + commission',
+    items:[
+      {name:'All Tier 3 deliverables', detail:'Included'},
+      {name:'Dedicated talent',        detail:'Priority assignment'},
+      {name:'Content strategy',        detail:'Quarterly custom'},
+      {name:'First-look inventory',    detail:'Exclusive access'},
+      {name:'Co-branded campaigns',    detail:'Available'},
+      {name:'Executive reviews',       detail:'Monthly'},
+    ],
+    footer:'Reserved for partners seeking category-level presence and a true co-marketing relationship.',
+    goals:['Full funnel','Category ownership'],
+  },
+];
+
+let activeSites=new Set(),bundleSites=new Set(),activeGoals=new Set();
+let cachedTotals={onceTotal:0,monthlyTotal:0,discount:0,selectedItems:[]};
+// Memory: store checked state and qty per deliverable id, persists across site filter changes
+const delivState={};  // { [id]: { checked: bool, qty: int } }
+
+function fmt(v){return'$'+(v>=1000?(v%1000===0?(v/1000).toFixed(0):(v/1000).toFixed(1))+'k':v);}
+function fmtFull(v){return'$'+v.toLocaleString('en-US');}
+function availSites(d){const p=activeSites.size===0?SITES.map(s=>s.id):[...activeSites];return p.filter(id=>d.fees[id]!==null);}
+function isAvail(d){return availSites(d).length>0;}
+function getFeeDisplay(d){const s=availSites(d);if(!s.length)return null;const v=s.map(x=>d.fees[x]),lo=Math.min(...v),hi=Math.max(...v);return lo===hi?fmt(lo):fmt(lo)+'–'+fmt(hi);}
+function getSub(d){if(activeSites.size===0)return null;const s=availSites(d);if(!s.length)return null;return s.reduce((sum,x)=>sum+d.fees[x],0);}
+function calcDisc(n){return n>=5?.20:n>=3?.15:n>=2?.10:0;}
+
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');
+}
+
+function initChips(){
+  const w=document.getElementById('chips');
+  SITES.forEach(s=>{const c=document.createElement('div');c.className='chip';c.dataset.id=s.id;c.innerHTML=`<span class="chip-dot" style="background:${s.color}"></span>${s.label}`;c.onclick=()=>toggleSite(s.id);w.appendChild(c);});
+}
+function toggleSite(id){
+  if(activeSites.has(id))activeSites.delete(id);else activeSites.add(id);
+  document.querySelectorAll('#chips .chip').forEach(c=>c.classList.toggle('active',activeSites.has(c.dataset.id)));
+  buildTable(); // preserve state — no checkbox reset
+}
+
+function saveState(){
+  DELIVERABLES.forEach(d=>{
+    const chk=document.getElementById('chk-'+d.id);
+    const qEl=document.getElementById('qty-'+d.id);
+    if(chk) delivState[d.id]={checked:chk.checked, qty:parseInt(qEl?.value)||1};
+  });
+}
+
+function buildTable(){
+  saveState();
+  const tbody=document.getElementById('tbody');tbody.innerHTML='';
+  const noSite=activeSites.size===0;
+  document.getElementById('fee-header').textContent=noSite?'Fee range':activeSites.size>1?'Fee (per site)':'Fee';
+  DELIVERABLES.forEach(d=>{
+    const avail=isAvail(d),tr=document.createElement('tr');tr.id='row-'+d.id;if(!avail)tr.classList.add('hidden-row');
+    const fH=avail?`<div>${getFeeDisplay(d)}</div>${d.note?`<div class="sub-note">${d.note}</div>`:''}`:`<span style="color:var(--color-text-tertiary);font-size:12px">—</span>`;
+    const prevChecked=delivState[d.id]?.checked&&avail;
+    const prevQty=delivState[d.id]?.qty||1;
+    tr.innerHTML=`<td class="check-col"><input type="checkbox" id="chk-${d.id}" ${!avail?'disabled':''} ${prevChecked?'checked':''} onchange="recalc()"></td><td><div class="del-name">${d.name}</div></td><td><div class="del-desc">${d.desc}</div></td><td class="price-cell divider-col" id="fee-${d.id}">${fH}</td><td style="text-align:right"><span class="cadence-pill ${d.cadence==='once'?'pill-once':'pill-monthly'}">${d.cadenceLabel}</span></td><td class="divider-col" style="text-align:right"><input class="qty-input" type="number" id="qty-${d.id}" min="1" max="99" value="${prevQty}" ${!avail?'disabled':''} onchange="recalc()" oninput="recalc()"></td><td class="price-cell divider-col" id="sub-${d.id}">—</td>`;
+    tbody.appendChild(tr);
+  });
+  document.getElementById('no-rows').style.display=DELIVERABLES.filter(d=>isAvail(d)).length===0?'block':'none';
+  recalc();
+}
+
+function recalc(){
+  const noSite=activeSites.size===0;
+  let oT=0,mT=0,cnt=0,oC=0,mC=0,items=[];
+  let anyChecked=false;
+  DELIVERABLES.forEach(d=>{
+    const chk=document.getElementById('chk-'+d.id),qEl=document.getElementById('qty-'+d.id),sEl=document.getElementById('sub-'+d.id);
+    if(!sEl)return;
+    if(!chk||!chk.checked){sEl.innerHTML='—';return;}
+    anyChecked=true; cnt++;
+    const qty=Math.max(1,parseInt(qEl.value)||1);
+    if(noSite){sEl.innerHTML='<span style="color:var(--color-text-tertiary);font-size:11px">Select a site</span>';return;}
+    const sub=getSub(d);if(sub===null){sEl.innerHTML='—';return;}
+    const lt=sub*qty;sEl.textContent=fmt(lt);items.push({d,qty,lineTotal:lt});
+    if(d.cadence==='once'){oT+=lt;oC++;}else{mT+=lt;mC++;}
+  });
+
+  const block=document.getElementById('summary-block'),note=document.getElementById('disc-note');
+  if(!anyChecked){block.style.display='none';note.textContent='';renderSummaryBreakdown([]);return;}
+  block.style.display='block';
+
+  if(noSite){
+    ['once-out','monthly-out','total-out'].forEach(id=>document.getElementById(id).textContent='—');
+    ['once-sub','monthly-sub','total-sub'].forEach(id=>document.getElementById(id).textContent='');
+    document.getElementById('disc-badge-wrap').innerHTML='';
+    // Monthly recurring always shows commission line
+    document.getElementById('monthly-out').textContent='Commission';
+    document.getElementById('monthly-sub').textContent='Performance-based on qualifying revenue';
+    note.textContent='Select one or more properties above to calculate totals.';
+    renderSummaryBreakdown([]);
+    return;
+  }
+
+  const disc=calcDisc(cnt),gT=oT+mT;
+  cachedTotals={onceTotal:oT,monthlyTotal:mT,discount:disc,selectedItems:items,count:cnt};
+  const sav=Math.round(gT*disc),oF=Math.round(oT*(1-disc)),mF=Math.round(mT*(1-disc));
+
+  document.getElementById('once-out').textContent=oT>0?fmt(oF):'—';
+  document.getElementById('once-sub').textContent=oC>0?`${oC} flat-fee item${oC>1?'s':''}${disc>0?' \xb7 '+Math.round(disc*100)+'% discount applied':''}` :'';
+
+  if(mT>0){
+    document.getElementById('monthly-out').textContent=fmt(mF)+'/mo';
+    document.getElementById('monthly-sub').textContent=`${mC} item${mC>1?'s':''}${disc>0?' \xb7 '+Math.round(disc*100)+'% discount applied':''} \xb7 3-month minimum`;
+  } else {
+    document.getElementById('monthly-out').textContent='Commission';
+    document.getElementById('monthly-sub').textContent='Performance-based on qualifying revenue';
+  }
+
+  const totalParts=[];
+  if(oF>0)totalParts.push(fmt(oF)+' flat-fee');
+  if(mF>0)totalParts.push(fmt(mF)+'/mo');
+  totalParts.push('+ commission');
+  document.getElementById('total-out').textContent=totalParts.join(' \xb7 ');
+  document.getElementById('total-sub').textContent=sav>0?`Saving ${fmt(sav)} with ${Math.round(disc*100)}% bundle discount`:'';
+
+  const bw=document.getElementById('disc-badge-wrap');
+  if(disc>0){bw.innerHTML=`<span class="disc-badge">${Math.round(disc*100)}% off</span>`;note.textContent=`${cnt} deliverable type${cnt>1?'s':''} selected across ${activeSites.size} propert${activeSites.size>1?'ies':'y'}. Bundle discount: 2 items = 10%, 3\u20134 = 15%, 5+ = 20%.`;}
+  else{bw.innerHTML='';note.textContent='1 deliverable selected. Add 1 more to unlock 10% bundle pricing.';}
+
+  renderSummaryBreakdown(items,oF,mF,sav,disc,cnt);
+}
+
+function renderSummaryBreakdown(items,oF,mF,sav,disc,cnt){
+  const el=document.getElementById('summary-breakdown');
+  if(!el)return;
+  if(!items||!items.length||activeSites.size===0){el.style.display='none';el.innerHTML='';return;}
+  el.style.display='block';
+  const siteArr=[...activeSites];
+  let html='<div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Breakdown by property</div>';
+
+  siteArr.forEach(sId=>{
+    const site=SITES.find(s=>s.id===sId);
+    if(!site)return;
+    const siteItems=items.filter(i=>i.d.fees[sId]!==null);
+    if(!siteItems.length)return;
+    const siteFlat=siteItems.filter(i=>i.d.cadence==='once').reduce((s,i)=>s+i.d.fees[sId]*i.qty,0);
+    const siteMo=siteItems.filter(i=>i.d.cadence==='monthly').reduce((s,i)=>s+i.d.fees[sId]*i.qty,0);
+    const siteFlatFinal=Math.round(siteFlat*(1-disc));
+    const siteMoFinal=Math.round(siteMo*(1-disc));
+    const siteParts=[];
+    if(siteFlatFinal>0)siteParts.push(fmt(siteFlatFinal)+' flat-fee');
+    if(siteMoFinal>0)siteParts.push(fmt(siteMoFinal)+'/mo');
+    siteParts.push('+ commission');
+    html+=`<div style="margin-bottom:14px;padding-bottom:14px;border-bottom:0.5px solid var(--color-border-tertiary)">
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
+        <span style="width:8px;height:8px;border-radius:50%;background:${site.color};flex-shrink:0;display:inline-block"></span>
+        <span style="font-size:13px;font-weight:500;color:var(--color-text-primary)">${site.label}</span>
+        <span style="margin-left:auto;font-size:13px;font-weight:500;color:var(--color-text-success)">${siteParts.join(' \xb7 ')}</span>
+      </div>`;
+    siteItems.forEach(i=>{
+      const fee=i.d.fees[sId]*i.qty;
+      const feeFinal=Math.round(fee*(1-disc));
+      html+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0 5px 15px;border-bottom:0.5px solid var(--color-border-tertiary)">
+        <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap">
+          <span style="font-size:12px;color:var(--color-text-primary)">${i.d.name}${i.qty>1?' \xd7'+i.qty:''}</span>
+          <span class="cadence-pill ${i.d.cadence==='once'?'pill-once':'pill-monthly'}" style="font-size:10px">${i.d.cadenceLabel}</span>
+          ${i.d.cadence==='monthly'?'<span style="font-size:10px;color:var(--color-text-tertiary)">3-mo min.</span>':''}
+        </div>
+        <span style="font-size:12px;font-weight:500;white-space:nowrap;margin-left:8px">${disc>0?`<span style="text-decoration:line-through;font-weight:400;color:var(--color-text-tertiary);margin-right:5px">${fmt(fee)}</span>`:''}<span style="color:var(--color-text-success)">${fmt(feeFinal)}</span></span>
+      </div>`;
+    });
+    html+='</div>';
+  });
+
+  const grandParts=[];
+  if(oF>0)grandParts.push(fmt(oF)+' flat-fee');
+  if(mF>0)grandParts.push(fmt(mF)+'/mo');
+  grandParts.push('+ commission');
+  html+=`<div style="display:flex;justify-content:space-between;align-items:flex-start;padding-top:4px">
+    <div>
+      <div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">Total \xb7 ${siteArr.length} propert${siteArr.length>1?'ies':'y'} \xb7 ${cnt} deliverable type${cnt>1?'s':''}</div>
+      ${disc>0?`<div style="font-size:11px;color:var(--color-text-success);margin-top:3px">${Math.round(disc*100)}% bundle discount applied \u2014 saving ${fmt(sav)}</div>`:''}
+      ${mF>0?'<div style="font-size:11px;color:var(--color-text-tertiary);margin-top:3px">Monthly items require a 3-month minimum commitment</div>':''}
+    </div>
+    <div style="text-align:right;font-size:14px;font-weight:500;color:var(--color-text-success);white-space:nowrap;margin-left:16px">${grandParts.join(' \xb7 ')}</div>
+  </div>
+  <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:12px;padding-top:10px;border-top:0.5px solid var(--color-border-tertiary)">All deals include a performance-based commission on qualifying revenue in addition to the flat fees shown above.</div>`;
+  el.innerHTML=html;
+}
+
+function renderPresetTiers(){
+  const grid=document.getElementById('preset-grid');
+  PRESET_TIERS.forEach(t=>{
+    const rows=t.items.map(item=>`
+      <div class="preset-item">
+        <span class="preset-item-name">${item.name}</span>
+        <span class="preset-item-detail">${item.detail}</span>
+      </div>`).join('');
+    const hdrBg=t.dark?'#2C2C2A':t.lightColor;
+    const nameColor=t.dark?'#e8e6de':'var(--color-text-primary)';
+    const taglineColor=t.dark?'#9c9a92':'var(--color-text-secondary)';
+    const priceColor=t.dark?'#e8e6de':'var(--color-text-primary)';
+    const psubColor=t.dark?'#6a6862':'var(--color-text-tertiary)';
+    const hdrBorder=t.dark?'border-bottom:0.5px solid rgba(255,255,255,0.08)':'border-bottom:0.5px solid var(--color-border-tertiary)';
+    const card=document.createElement('div');card.className='preset-card';
+    card.innerHTML=`
+      <div class="preset-header${t.dark?' dark':''}" style="background:${hdrBg};${hdrBorder}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div class="preset-tier-label" style="color:${t.textColor}">${t.label}</div>
+          ${t.sublabel?`<span class="sublabel-pill">${t.sublabel}</span>`:''}
+        </div>
+        <div class="preset-name" style="color:${nameColor}">${t.name}</div>
+        <div class="preset-tagline" style="color:${taglineColor}">${t.tagline}</div>
+        <div class="preset-price" style="color:${priceColor}">${t.pricing}</div>
+        <div class="preset-price-sub" style="color:${psubColor}">${t.pricingSub}</div>
+      </div>
+      <div class="preset-body">
+        ${rows}
+        <div class="preset-footer">${t.footer}</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function initBundleChips(){
+  const w=document.getElementById('bundle-chips');
+  SITES.forEach(s=>{const c=document.createElement('div');c.className='chip';c.dataset.id=s.id;c.innerHTML=`<span class="chip-dot" style="background:${s.color}"></span>${s.label}`;c.onclick=()=>{if(bundleSites.has(s.id))bundleSites.delete(s.id);else bundleSites.add(s.id);document.querySelectorAll('#bundle-chips .chip').forEach(ch=>ch.classList.toggle('active',bundleSites.has(ch.dataset.id)));};w.appendChild(c);});
+}
+function initGoalCards(){
+  const grid=document.getElementById('goal-grid');
+  GOALS.forEach(g=>{const card=document.createElement('div');card.className='goal-card';card.dataset.id=g.id;card.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div style="font-size:18px">${g.icon}</div><div class="goal-check"></div></div><div class="goal-name">${g.name}</div><div class="goal-desc">${g.desc}</div>`;card.onclick=()=>{if(activeGoals.has(g.id))activeGoals.delete(g.id);else activeGoals.add(g.id);card.classList.toggle('active',activeGoals.has(g.id));};grid.appendChild(card);});
+}
+
+function buildBundle(){
+  if(bundleSites.size===0){alert('Please select at least one property.');return;}
+  if(activeGoals.size===0){alert('Please select at least one goal.');return;}
+
+  const rawMonthly=parseFloat(document.getElementById('budget-monthly').value);
+  const rawOnetime=parseFloat(document.getElementById('budget-onetime').value);
+  const hasMoBudget=rawMonthly>0;
+  const hasOtBudget=rawOnetime>0;
+  const bM=hasMoBudget?rawMonthly:0;
+  const bO=hasOtBudget?rawOnetime:0;
+  const siteArr=[...bundleSites];
+  const goalArr=[...activeGoals];
+  const goalNames=goalArr.map(id=>GOALS.find(g=>g.id===id)?.name).filter(Boolean);
+
+  const res=document.getElementById('bundle-result');res.style.display='block';
+
+  if(!hasMoBudget&&!hasOtBudget){
+    document.getElementById('bundle-title').textContent='No budget provided';
+    document.getElementById('bundle-sub').textContent='Enter a monthly or flat-fee budget above, or both.';
+    document.getElementById('bundle-price').textContent='';document.getElementById('bundle-price-sub').textContent='';
+    document.getElementById('bundle-table').innerHTML='';document.getElementById('bundle-note').innerHTML='';
+    return;
+  }
+
+  const goalReasonMap={
+    ai_visibility:'long-form written content that AI models index and cite',
+    sales_growth:'high-intent placements that reach audiences actively researching products',
+    brand_awareness:'multi-format distribution across our editorial properties',
+    profitable_growth:'evergreen content and performance-driven placements that compound over time',
+  };
+
+  function scoredCandidates(sites){
+    return DELIVERABLES
+      .filter(d=>sites.some(s=>d.fees[s]!==null))
+      .map(d=>{
+        const availForSites=sites.filter(s=>d.fees[s]!==null);
+        const fee=availForSites.reduce((sum,s)=>sum+d.fees[s],0);
+        const score=d.goals.filter(g=>activeGoals.has(g)).length;
+        return{...d,fee,availForSites,score};
+      })
+      .filter(d=>d.score>0)
+      .filter(d=>d.cadence==='once'?hasOtBudget:hasMoBudget)
+      .sort((a,b)=>b.score-a.score);
+  }
+
+  function tryBuild(sites){
+    const cands=scoredCandidates(sites);
+    let sel=[],rO=0,rM=0;
+    for(const d of cands){
+      if(d.cadence==='once'&&rO+d.fee<=bO){sel.push(d);rO+=d.fee;}
+      else if(d.cadence==='monthly'&&rM+d.fee<=bM){sel.push(d);rM+=d.fee;}
+      if(sel.length>=6)break;
+    }
+    return{sel,rO,rM};
+  }
+
+  let {sel,rO,rM}=tryBuild(siteArr);
+  let usedSites=siteArr;
+  let budgetNote='';
+
+  if(sel.length===0&&siteArr.length>1){
+    let best=null,bestSite=null,bestScore=0;
+    for(const sId of siteArr){
+      const r=tryBuild([sId]);
+      if(r.sel.length>bestScore){bestScore=r.sel.length;best=r;bestSite=sId;}
+    }
+    if(best&&best.sel.length>0){
+      sel=best.sel;rO=best.rO;rM=best.rM;usedSites=[bestSite];
+      const sn=SITES.find(s=>s.id===bestSite)?.label;
+      budgetNote=`Budget was too low to cover all selected properties. Showing best match for ${sn} only.`;
+    }
+  }
+
+  if(sel.length===0){
+    document.getElementById('bundle-title').textContent='Budget too low for flat-fee options';
+    document.getElementById('bundle-sub').textContent='Goals: '+goalNames.join(', ');
+    document.getElementById('bundle-price').textContent='Performance-based only';
+    document.getElementById('bundle-price-sub').textContent='';
+    document.getElementById('bundle-table').innerHTML='';
+    document.getElementById('bundle-note').innerHTML='<div>Your current budget is below our minimum for any flat-fee placements on these properties. We can discuss a performance-based commission arrangement at a premium rate \u2014 reach out to explore options.</div>';
+    return;
+  }
+
+  const disc=calcDisc(sel.length),oF=Math.round(rO*(1-disc)),mF=Math.round(rM*(1-disc)),sav=Math.round((rO+rM)*disc);
+  const siteNames=usedSites.map(id=>SITES.find(s=>s.id===id)?.label).filter(Boolean).join(', ');
+  const flatCount=sel.filter(d=>d.cadence==='once').length;
+  const moCount=sel.filter(d=>d.cadence==='monthly').length;
+  const countNote=[flatCount>0?`${flatCount} flat-fee item${flatCount>1?'s':''}`:null,moCount>0?`${moCount} monthly item${moCount>1?'s':''}`:null].filter(Boolean).join(', ');
+  const reasons=goalArr.map(g=>goalReasonMap[g]).filter(Boolean);
+  const whyCopy=`This bundle is built for ${goalNames.join(' and ')}. It prioritizes ${reasons.join(' and ')}, giving you ${sel.length} deliverable type${sel.length>1?'s':''} across ${usedSites.length} propert${usedSites.length>1?'ies':'y'}.`;
+
+  const pts=[];if(oF>0)pts.push(fmt(oF)+' flat-fee');if(mF>0)pts.push(fmt(mF)+'/mo');pts.push('+ commission');
+  const rows=sel.map(d=>`<tr>
+    <td><div style="font-weight:500;font-size:13px">${d.name}</div></td>
+    <td><span class="cadence-pill ${d.cadence==='once'?'pill-once':'pill-monthly'}" style="font-size:10px">${d.cadenceLabel}</span></td>
+    <td class="amt">${fmt(d.fee)}</td>
+    <td class="amt" style="color:var(--color-text-success)">${fmt(Math.round(d.fee*(1-disc)))}</td>
+  </tr>`).join('');
+
+  document.getElementById('bundle-title').textContent=`Custom bundle \u2014 ${siteNames}`;
+  document.getElementById('bundle-sub').textContent=`Goals: ${goalNames.join(', ')} \xb7 ${countNote}`;
+  document.getElementById('bundle-price').textContent=pts.join(' \xb7 ');
+  document.getElementById('bundle-price-sub').textContent=disc>0?`Saving ${fmt(sav)} with ${Math.round(disc*100)}% bundle discount`:'';
+  document.getElementById('bundle-table').innerHTML=`<tr style="background:var(--color-background-secondary)">
+    <th style="padding:8px 16px;font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;text-align:left">Deliverable</th>
+    <th style="padding:8px 16px;font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;text-align:left">Cadence</th>
+    <th style="padding:8px 16px;font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;text-align:right">${usedSites.length>1?'Combined fee':'List price'}</th>
+    <th style="padding:8px 16px;font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;text-align:right">Bundle price</th>
+  </tr>${rows}`;
+
+  const noteLines=[whyCopy];
+  if(disc>0)noteLines.push(`${Math.round(disc*100)}% bundle discount applied \u2014 saving ${fmt(sav)}.`);
+  if(moCount>0)noteLines.push('Monthly items require a 3-month minimum commitment.');
+  if(budgetNote)noteLines.push(budgetNote);
+  noteLines.push('All content maintains editorial integrity. Commission on qualifying revenue applies in addition to fees shown.');
+  document.getElementById('bundle-note').innerHTML=noteLines.map(l=>`<div style="margin-bottom:4px">${l}</div>`).join('');
+}
+
+initChips();buildTable();initBundleChips();initGoalCards();renderPresetTiers();
+
+// ──────────────────────────────────────────
+// NAVIGATION HELPERS
+// ──────────────────────────────────────────
+function goToTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).classList.add('active');
+}
+
+function goToMediaPlan(sourceTab){
+  // Store source context
+  window._mpSource = sourceTab==='rc' ? getRCContext() : getBBContext();
+  const notice = document.getElementById('mp-source-notice');
+  if(window._mpSource && window._mpSource.summary){
+    notice.style.display='block';
+    notice.innerHTML=`<strong>Pulled from ${sourceTab==='rc'?'Rate card':'Bundle builder'}:</strong> ${window._mpSource.summary}`;
+  } else {
+    notice.style.display='none';
+  }
+  goToTab('mp');
+  window.scrollTo(0,0);
+}
+
+function goToIO(sourceTab){
+  window._ioSource = sourceTab==='rc' ? getRCContext() : getBBContext();
+  renderIOForm(window._ioSource, sourceTab);
+  goToTab('io');
+  window.scrollTo(0,0);
+}
+
+function getRCContext(){
+  const items = cachedTotals.selectedItems||[];
+  if(!items.length) return null;
+  const sites=[...activeSites].map(id=>SITES.find(s=>s.id===id)?.label).filter(Boolean);
+  const disc=cachedTotals.discount||0;
+  const oF=Math.round((cachedTotals.onceTotal||0)*(1-disc));
+  const mF=Math.round((cachedTotals.monthlyTotal||0)*(1-disc));
+  const totalStr=[oF>0?fmt(oF)+' flat-fee':null,mF>0?fmt(mF)+'/mo':null,'+ commission'].filter(Boolean).join(' \xb7 ');
+  return{
+    source:'Rate card',
+    sites,
+    items:items.map(i=>({name:i.d.name,cadence:i.d.cadence,qty:i.qty,lineTotal:i.lineTotal,delivId:i.d.id})),
+    oF,mF,disc,
+    summary:`${sites.join(', ')} \xb7 ${items.length} deliverable type${items.length>1?'s':''} \xb7 ${totalStr}`,
+    totalStr,
+  };
+}
+
+function getBBContext(){
+  const titleEl=document.getElementById('bundle-title');
+  const priceEl=document.getElementById('bundle-price');
+  const noteEl=document.getElementById('bundle-note');
+  if(!titleEl||!titleEl.textContent||titleEl.textContent==='No matches found'||titleEl.textContent==='Budget too low for flat-fee options') return null;
+  const sites=[...bundleSites].map(id=>SITES.find(s=>s.id===id)?.label).filter(Boolean);
+  // Parse rows from bundle table
+  const rows=[...document.querySelectorAll('#bundle-table tr')].slice(1).map(tr=>{
+    const cells=[...tr.querySelectorAll('td')];
+    return cells.length?{name:cells[0]?.textContent?.trim(),cadence:cells[1]?.textContent?.includes('month')?'monthly':'once',listPrice:cells[2]?.textContent?.trim(),bundlePrice:cells[3]?.textContent?.trim()}:null;
+  }).filter(Boolean);
+  return{
+    source:'Bundle builder',
+    sites,
+    items:rows,
+    summary:`${titleEl.textContent} \xb7 ${priceEl?.textContent}`,
+    totalStr:priceEl?.textContent||'',
+  };
+}
+
+// ──────────────────────────────────────────
+// IO GENERATOR (TAB 4)
+// ──────────────────────────────────────────
+function renderIOForm(ctx, sourceTab){
+  const notice=document.getElementById('io-source-notice');
+  const form=document.getElementById('io-form-content');
+  document.getElementById('io-output').style.display='none';
+
+  if(!ctx){
+    notice.style.display='block';
+    notice.textContent=`No ${sourceTab==='rc'?'rate card selections':'bundle'} found. Go to the ${sourceTab==='rc'?'Rate card':'Bundle builder'} tab, make your selections, then click "Generate IO \u2192".`;
+    form.innerHTML='<div style="padding:32px;text-align:center;color:var(--color-text-tertiary);font-size:13px">No deal details found. Please make selections first.</div>';
+    return;
+  }
+
+  notice.style.display='block';
+  notice.innerHTML=`<strong>Source: ${ctx.source}</strong> \u2014 ${ctx.summary}`;
+
+  const today=new Date().toISOString().slice(0,7);
+  form.innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+      ${ioField('Partner company name','io-partner','text','e.g. Hatch, Purple, Casper')}
+      ${ioField('Partner contact name','io-contact','text','Full name')}
+      ${ioField('Contact email','io-email','email','partner@brand.com')}
+      ${ioField('Accounts payable email','io-ap-email','email','Leave blank if same as above')}
+      ${ioField('Talent or property name(s)','io-talent','text','Creator name or property (e.g. Sleepopolis editorial)')}
+      ${ioField('Payment method','io-payment','select','',['Direct invoice (Net 30)','Through a network'])}
+      ${ioFieldFull('Network name (if applicable)','io-network','text','e.g. Impact, CJ Affiliate')}
+      ${ioFieldFull('Scope of work','io-scope','textarea','Describe what Pillar4 will produce for this partner...')}
+    </div>
+    ${ctx.items&&ctx.items.some&&ctx.items.some(i=>(i.delivId==='youtube'||i.delivId==='tiktok'||i.delivId==='ig_story'||i.delivId==='ig_post')||i.cadence==='once')?\`
+    <div style="border-top:0.5px solid var(--color-border-tertiary);padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:0">
+      ${ioField('Paid advertising rights','io-paid-ads','select','',['No \u2014 organic use only','Yes \u2014 included in this agreement','Yes \u2014 requires a separate written agreement'])}
+      ${ioField('Revision rounds included','io-revisions','select','',['1 round','2 rounds','3 rounds'])}
+    </div>\`:''}
+    ${ctx.items&&ctx.items.some&&ctx.items.some(i=>i.delivId==='review'||i.name==='Long-form review')?\`
+    <div style="border-top:0.5px solid var(--color-border-tertiary);padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:0">
+      ${ioField('Position guarantee','io-position','select','',['No position guarantee','Top 3 in relevant roundup','Top 5 in relevant roundup','Featured / #1 position'])}
+      ${ioField('Commission structure','io-commission','select','',['Flat fee only','Affiliate commission on qualifying purchases','Revenue share (specify in scope)'])}
+    </div>\`:''}
+    <div style="padding:16px;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:10px;align-items:center">
+      <button onclick="submitIOForm()" style="font-size:13px;padding:8px 18px;background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)">Generate IO draft \u2192</button>
+      <span style="font-size:11px;color:var(--color-text-tertiary)">This will produce a complete IO document you can copy or save</span>
+    </div>`;
+}
+
+function ioField(label,id,type,placeholder,options){
+  const styles='padding:14px 16px;border-bottom:0.5px solid var(--color-border-tertiary)';
+  const labelHtml=`<div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">${label}</div>`;
+  let inputHtml;
+  if(type==='select'){
+    inputHtml=`<select id="${id}" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">${options.map(o=>`<option>${o}</option>`).join('')}</select>`;
+  } else {
+    inputHtml=`<input type="${type}" id="${id}" placeholder="${placeholder}" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">`;
+  }
+  return `<div style="${styles}">${labelHtml}${inputHtml}</div>`;
+}
+
+function ioFieldFull(label,id,type,placeholder){
+  const styles='padding:14px 16px;border-bottom:0.5px solid var(--color-border-tertiary);grid-column:1/-1';
+  const labelHtml=`<div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">${label}</div>`;
+  const inputHtml=type==='textarea'
+    ?`<textarea id="${id}" placeholder="${placeholder}" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit;resize:vertical;min-height:80px"></textarea>`
+    :`<input type="text" id="${id}" placeholder="${placeholder}" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;padding:7px 10px;font-family:inherit">`;
+  return `<div style="${styles}">${labelHtml}${inputHtml}</div>`;
+}
+
+function gv(id){const el=document.getElementById(id);return el?el.value?.trim()||'':''}
+
+function submitIOForm(){
+  const ctx=window._ioSource;
+  if(!ctx){alert('No deal context found. Please go back and make selections first.');return;}
+  const partner=gv('io-partner'), contact=gv('io-contact'), email=gv('io-email');
+  if(!partner||!contact||!email){alert('Please fill in partner name, contact name, and email.');return;}
+
+  const apEmail=gv('io-ap-email')||email;
+  const talent=gv('io-talent');
+  const payment=gv('io-payment');
+  const network=gv('io-network');
+  const scope=gv('io-scope');
+  const paidAds=gv('io-paid-ads');
+  const revisions=gv('io-revisions');
+  const position=gv('io-position');
+  const commission=gv('io-commission');
+
+  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const sites=ctx.sites?.join(', ')||'';
+
+  let delivLines='';
+  if(ctx.items&&ctx.items.length){
+    if(ctx.items[0].lineTotal!=null){
+      delivLines=ctx.items.map(i=>`${i.name} \xd7${i.qty} \u2014 ${fmt(i.lineTotal)}`).join('\n');
+    } else {
+      delivLines=ctx.items.map(i=>`${i.name} \u2014 ${i.bundlePrice}`).join('\n');
+    }
+  }
+
+  const hasPaidAds=!!document.getElementById('io-paid-ads');
+  const hasReview=!!document.getElementById('io-position');
+
+  let io=`PILLAR4 MEDIA \u2014 PARTNERSHIP INSERTION ORDER
+${'='.repeat(60)}
+
+Date: ${today}
+
+PARTIES
+Pillar4 Media (Media Company)
+${partner} (Partner)
+
+PARTNER CONTACT
+${contact}
+${email}${apEmail!==email?'\n'+apEmail:''}
+
+MEDIA PROPERTIES
+${sites}
+
+TALENT / PROPERTY
+${talent||'[To be confirmed]'}
+
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+DELIVERABLES
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+${delivLines}
+
+TOTAL: ${ctx.totalStr}
+
+[Note: Start and end dates to be confirmed upon signature. Please add dates in the Deliverables table of the final document.]
+
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+SCOPE OF WORK
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+${scope||'[Scope to be detailed here]'}
+
+APPROVAL PROCESS
+Pricing includes up to ${revisions||'two (2)'} rounds of minor revisions per deliverable. Major concept changes after script or brief approval may incur additional fees.
+
+EDITORIAL INTEGRITY
+All content published on Pillar4 Media properties maintains editorial integrity and honesty. Pillar4 Media retains full editorial control over its properties. Opinions, rankings, and recommendations reflect genuine editorial judgment and are not influenced by the commercial relationship with the partner. The sponsored nature of the content will be clearly disclosed.
+`;
+
+  if(hasPaidAds){
+    io+=`
+CONTENT USAGE RIGHTS
+Organic Usage: ${partner} is granted a perpetual, non-exclusive license to link to or embed published content URLs on their official website and owned social media channels.
+Paid Advertising: ${paidAds==='No \u2014 organic use only'?`${partner} does not have the right to use content specified in this IO for paid advertising without a separate written agreement and additional licensing fee.`:paidAds}
+`;
+  }
+
+  if(hasReview){
+    io+=`
+LONG-FORM REVIEW TERMS
+Position: ${position||'No position guarantee'}
+Commission: ${commission||'Flat fee only'}
+`;
+  }
+
+  io+=`
+PAYMENT TERMS
+Method: ${payment}${network?' via '+network:''}
+Terms: Net 30. Pillar4 Media will invoice ${partner} upon signature of this IO. Invoices are payable within thirty (30) days of receipt.
+Invoice to: ${email}${apEmail!==email?' and '+apEmail:''}
+${ctx.mF>0?'Monthly recurring fees will be invoiced at the start of each period. A minimum 3-month commitment applies to all monthly deliverables.':''}
+
+FTC DISCLOSURE & COMPLIANCE
+Pillar4 Media will provide clear and conspicuous disclosures in accordance with FTC guidelines. All affiliate links will be accompanied by a standard disclaimer stating that a commission may be earned from qualifying purchases.
+
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+SIGNATURES
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+
+Partner Signature: _________________________ Date: _____________
+${contact} / ${partner}
+
+Pillar4 Media Signature: ___________________ Date: _____________
+`;
+
+  const out=document.getElementById('io-output');
+  out.style.display='block';
+  out.innerHTML=`
+    <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden">
+      <div style="padding:14px 16px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:13px;font-weight:500">IO draft \u2014 ${partner}</div>
+        <button onclick="copyIO()" style="font-size:12px;padding:5px 12px">Copy to clipboard</button>
+      </div>
+      <pre id="io-text" style="padding:20px;font-family:'Helvetica Neue',sans-serif;font-size:12px;line-height:1.7;white-space:pre-wrap;color:var(--color-text-primary)">${io}</pre>
+    </div>`;
+  out.scrollIntoView({behavior:'smooth'});
+}
+
+function copyIO(){
+  const text=document.getElementById('io-text')?.textContent||'';
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=event.target;
+    btn.textContent='Copied!';
+    setTimeout(()=>btn.textContent='Copy to clipboard',2000);
+  });
+}
+
+// ──────────────────────────────────────────
+// MEDIA PLAN (TAB 3)
+// ──────────────────────────────────────────
+let mpRows=[];
+
+function togglePaste(){
+  const a=document.getElementById('paste-area');
+  a.style.display=a.style.display==='none'?'block':'none';
+}
+
+function handleCSV(input){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>parseRawData(e.target.result,',');
+  reader.readAsText(file);
+}
+
+function parsePaste(){
+  const raw=document.getElementById('paste-input')?.value||'';
+  const delim=raw.includes('\t')?'\t':',';
+  parseRawData(raw,delim);
+}
+
+function loadSampleData(){
+  const sample=`URL\tSessions\tImpressions\n/best-mattresses-for-back-pain\t82000\t210000\n/best-mattress\t145000\t380000\n/purple-mattress-review\t34000\t88000\n/saatva-mattress-review\t29000\t72000\n/best-mattress-for-side-sleepers\t61000\t155000\n/casper-review\t22000\t54000\n/best-mattresses-2024\t98000\t245000`;
+  parseRawData(sample,'\t');
+}
+
+function parseRawData(raw,delim){
+  const lines=raw.trim().split('\n').filter(l=>l.trim());
+  if(lines.length<2){alert('Need at least a header row and one data row.');return;}
+
+  const headers=lines[0].split(delim).map(h=>h.trim().toLowerCase().replace(/['"]/g,''));
+  const urlIdx=headers.findIndex(h=>/url|page|path|slug/.test(h));
+  const sessIdx=headers.findIndex(h=>/session|visit|traffic|click/.test(h));
+  const pvIdx=headers.findIndex(h=>/pageview|view|pv/.test(h));
+  const impIdx=headers.findIndex(h=>/impress|search|organic/.test(h));
+
+  const trafficIdx=sessIdx>=0?sessIdx:pvIdx>=0?pvIdx:-1;
+  if(urlIdx<0||trafficIdx<0){
+    alert('Could not detect URL and traffic columns. Make sure your headers include words like "URL", "Sessions" or "Pageviews", and optionally "Impressions".');
+    return;
+  }
+
+  mpRows=lines.slice(1).map(line=>{
+    const cells=line.split(delim).map(c=>c.trim().replace(/['"]/g,''));
+    const url=cells[urlIdx]||'';
+    const sessions=parseFloat(cells[trafficIdx])||0;
+    const impressions=impIdx>=0?parseFloat(cells[impIdx])||0:0;
+    return{url,sessions,impressions};
+  }).filter(r=>r.url&&r.sessions>0).sort((a,b)=>b.sessions-a.sessions);
+
+  showMPPreview();
+}
+
+function showMPPreview(){
+  document.getElementById('mp-data-preview').style.display='block';
+  document.getElementById('paste-area').style.display='none';
+  document.getElementById('mp-config').style.display='block';
+  document.getElementById('mp-parse-status').textContent=`\u2713 ${mpRows.length} pages loaded, sorted by traffic`;
+
+  const table=document.getElementById('mp-preview-table');
+  const topRows=mpRows.slice(0,5);
+  table.innerHTML=`<tr style="background:var(--color-background-secondary)">${['URL','Sessions',mpRows[0]?.impressions>0?'Impressions':''].filter(Boolean).map(h=>`<th style="padding:6px 10px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:left">${h}</th>`).join('')}</tr>`
+    +topRows.map(r=>`<tr><td style="padding:5px 10px;font-size:11px;border-bottom:0.5px solid var(--color-border-tertiary)">${r.url}</td><td style="padding:5px 10px;font-size:11px;border-bottom:0.5px solid var(--color-border-tertiary)">${r.sessions.toLocaleString()}</td>${r.impressions>0?`<td style="padding:5px 10px;font-size:11px;border-bottom:0.5px solid var(--color-border-tertiary)">${r.impressions.toLocaleString()}</td>`:''}</tr>`).join('')
+    +(mpRows.length>5?`<tr><td colspan="3" style="padding:5px 10px;font-size:11px;color:var(--color-text-tertiary)">+ ${mpRows.length-5} more pages</td></tr>`:'');
+
+  // Set default start month to next month
+  const d=new Date();d.setMonth(d.getMonth()+1);
+  const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0');
+  document.getElementById('mp-start-month').value=`${y}-${m}`;
+}
+
+function clearMPData(){
+  mpRows=[];
+  document.getElementById('mp-data-preview').style.display='none';
+  document.getElementById('mp-config').style.display='none';
+  document.getElementById('mp-output').style.display='none';
+  document.getElementById('mp-csv-input').value='';
+}
+
+function generateMediaPlan(){
+  if(!mpRows.length){alert('Please upload or paste traffic data first.');return;}
+  const startMonth=document.getElementById('mp-start-month')?.value;
+  const duration=parseInt(document.getElementById('mp-duration')?.value)||3;
+  const budget=parseFloat(document.getElementById('mp-budget')?.value)||0;
+  const maxPlacements=parseInt(document.getElementById('mp-max-placements')?.value)||5;
+  const ctx=window._mpSource;
+
+  // Determine which deliverables to plan for
+  const planDeliverables=ctx?.items?.length
+    ? ctx.items.map(i=>({name:i.name,cadence:i.cadence,qty:i.qty||1}))
+    : [{name:'Long-form review',cadence:'once',qty:1},{name:'Featured placement',cadence:'once',qty:1},{name:'YouTube video',cadence:'once',qty:1}];
+
+  const topPages=mpRows.slice(0,maxPlacements);
+  const totalSessions=topPages.reduce((s,r)=>s+r.sessions,0);
+  const totalImpressions=topPages.reduce((s,r)=>s+r.impressions,0);
+  const hasImpressions=totalImpressions>0;
+
+  // Estimate total reach: editorial pages + social/video estimates
+  const editorialReach=totalSessions;
+  const hasVideo=planDeliverables.some(d=>/youtube|video/i.test(d.name));
+  const hasSocial=planDeliverables.some(d=>/tiktok|instagram|social/i.test(d.name));
+  const ytEstimate=hasVideo?85000:0;
+  const socialEstimate=hasSocial?42000:0;
+  const totalReach=editorialReach+ytEstimate+socialEstimate;
+
+  // Assign deliverables to pages by traffic rank
+  const onceDelivs=planDeliverables.filter(d=>d.cadence==='once');
+  const moDelivs=planDeliverables.filter(d=>d.cadence==='monthly');
+  const placements=topPages.map((page,i)=>{
+    const assigned=[];
+    if(i<onceDelivs.length)assigned.push(onceDelivs[i].name);
+    if(moDelivs.length)assigned.push(moDelivs[0].name);
+    return{...page,assigned,share:page.sessions/totalSessions};
+  });
+
+  // Build content calendar
+  const months=[];
+  for(let i=0;i<duration;i++){
+    const d=new Date(startMonth+'-01');
+    d.setMonth(d.getMonth()+i);
+    months.push(d.toLocaleDateString('en-US',{month:'long',year:'numeric'}));
+  }
+
+  // Budget allocation by traffic weight
+  const budgetRows=budget>0?placements.map(p=>({...p,allocated:Math.round(p.share*budget)})):[];
+
+  // Build output HTML
+  let html=`
+  <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:14px">
+    <div style="padding:14px 16px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:14px;font-weight:500">Estimated total reach</div>
+      <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">Across all placements and channels over ${duration} month${duration>1?'s':''}</div>
+    </div>
+    <div style="padding:16px;display:grid;grid-template-columns:repeat(${hasVideo||hasSocial?4:2},1fr);gap:16px">
+      <div><div style="font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">Editorial reach</div><div style="font-size:22px;font-weight:500;color:var(--color-text-primary)">${editorialReach.toLocaleString()}</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Monthly sessions on selected pages</div></div>
+      ${hasImpressions?`<div><div style="font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">Search impressions</div><div style="font-size:22px;font-weight:500;color:var(--color-text-primary)">${totalImpressions.toLocaleString()}</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Monthly organic impressions</div></div>`:''}
+      ${hasVideo?`<div><div style="font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">YouTube (est.)</div><div style="font-size:22px;font-weight:500;color:var(--color-text-primary)">~${ytEstimate.toLocaleString()}</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Estimated views per video</div></div>`:''}
+      ${hasSocial?`<div><div style="font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">Social (est.)</div><div style="font-size:22px;font-weight:500;color:var(--color-text-primary)">~${socialEstimate.toLocaleString()}</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Estimated impressions across posts</div></div>`:''}
+      <div><div style="font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">Total estimated reach</div><div style="font-size:22px;font-weight:500;color:var(--color-text-success)">${totalReach.toLocaleString()}</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Combined across all channels</div></div>
+    </div>
+    ${hasVideo||hasSocial?'<div style="padding:0 16px 14px;font-size:11px;color:var(--color-text-tertiary)">YouTube and social reach are estimates based on typical performance on our properties. Actual results vary.</div>':''}
+  </div>
+
+  <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:14px">
+    <div style="padding:14px 16px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:14px;font-weight:500">Recommended placements</div>
+      <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">Top pages by traffic, with matched deliverables</div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <tr style="background:var(--color-background-secondary)">
+        <th style="padding:8px 14px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:left">Page / URL</th>
+        <th style="padding:8px 14px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:right">Monthly sessions</th>
+        ${hasImpressions?'<th style="padding:8px 14px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:right">Impressions</th>':''}
+        <th style="padding:8px 14px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:left">Recommended deliverable</th>
+        ${budget>0?'<th style="padding:8px 14px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:right">Budget allocation</th>':''}
+      </tr>
+      ${placements.map(p=>`<tr style="border-bottom:0.5px solid var(--color-border-tertiary)">
+        <td style="padding:10px 14px;font-size:12px;color:var(--color-text-primary);font-family:monospace;word-break:break-all">${p.url}</td>
+        <td style="padding:10px 14px;font-size:12px;text-align:right">${p.sessions.toLocaleString()}</td>
+        ${hasImpressions?`<td style="padding:10px 14px;font-size:12px;text-align:right">${p.impressions>0?p.impressions.toLocaleString():'—'}</td>`:''}
+        <td style="padding:10px 14px;font-size:12px;color:var(--color-text-secondary)">${p.assigned.join(', ')||'—'}</td>
+        ${budget>0?`<td style="padding:10px 14px;font-size:12px;text-align:right;color:var(--color-text-success);font-weight:500">$${(p.allocated).toLocaleString()}</td>`:''}
+      </tr>`).join('')}
+    </table>
+  </div>
+
+  <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:14px">
+    <div style="padding:14px 16px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:14px;font-weight:500">Content calendar</div>
+      <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">${months[0]}${months.length>1?' \u2014 '+months[months.length-1]:''} \xb7 ${duration} month${duration>1?'s':''}</div>
+    </div>
+    <div style="padding:16px;overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:500px">
+        <tr style="background:var(--color-background-secondary)">
+          <th style="padding:8px 12px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:left">Deliverable</th>
+          ${months.map(m=>`<th style="padding:8px 12px;font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;text-align:center">${m}</th>`).join('')}
+        </tr>
+        ${planDeliverables.map((d,i)=>{
+          const cells=months.map((_,mi)=>{
+            if(d.cadence==='monthly') return '<span style="font-size:11px;background:var(--color-background-success);color:var(--color-text-success);padding:2px 8px;border-radius:99px">Active</span>';
+            if(mi===Math.min(i,months.length-1)) return '<span style="font-size:11px;background:#E1F5EE;color:#085041;padding:2px 8px;border-radius:99px">Launch</span>';
+            return '<span style="color:var(--color-text-tertiary);font-size:11px">\u2014</span>';
+          });
+          return `<tr style="border-bottom:0.5px solid var(--color-border-tertiary)">
+            <td style="padding:10px 12px;font-size:12px;font-weight:500">${d.name}${d.qty>1?' \xd7'+d.qty:''}</td>
+            ${cells.map(c=>`<td style="padding:10px 12px;text-align:center">${c}</td>`).join('')}
+          </tr>`;
+        }).join('')}
+      </table>
+    </div>
+  </div>`;
+
+  const out=document.getElementById('mp-output');
+  out.style.display='block';
+  out.innerHTML=html;
+  out.scrollIntoView({behavior:'smooth'});
+}
+
+</script>
+</body>
+</html>
